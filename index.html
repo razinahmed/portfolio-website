@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdul Rasak V - Full Stack Developer, UI/UX Designer, and IT Administrator based in UAE">
+    <meta name="keywords" content="developer, portfolio, full stack, UI/UX designer, IT administrator">
+    <meta name="author" content="Abdul Rasak V">
+    <title>Abdul Rasak V - Full Stack Developer & UI/UX Designer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Three.js for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Vanilla Tilt for 3D card effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-cube">
+                <div class="cube-face cube-face-front"></div>
+                <div class="cube-face cube-face-back"></div>
+                <div class="cube-face cube-face-right"></div>
+                <div class="cube-face cube-face-left"></div>
+                <div class="cube-face cube-face-top"></div>
+                <div class="cube-face cube-face-bottom"></div>
+            </div>
+            <p class="preloader-text">Loading Experience</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#hero" class="logo-text">Abdul Rasak V</a>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <button class="theme-toggle" aria-label="Toggle dark/light mode">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- 3D Canvas Background -->
+        <canvas id="bg-canvas" class="hero-canvas"></canvas>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Abdul Rasak V</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="static-text">I'm a </span>
+                    <span class="dynamic-text">
+                        <span class="typed-text"></span>
+                        <span class="cursor"></span>
+                    </span>
+                </div>
+                <p class="hero-description">
+                    Crafting elegant solutions through code and design. Passionate about building seamless web experiences and robust backend systems.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-placeholder" data-tilt>
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="95" fill="url(#avatarGradient)" opacity="0.2"/>
+                        <circle cx="100" cy="70" r="30" fill="currentColor"/>
+                        <path d="M50 150 Q50 120 100 120 Q150 120 150 150" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in-element">
+                    <p>
+                        I'm an accomplished IT professional based in the UAE with a passion for creating exceptional digital experiences.
+                        With expertise spanning full-stack development, UI/UX design, and system administration, I bring a holistic approach to every project.
+                    </p>
+                    <p>
+                        My journey in tech started with a curiosity about how things work. Over the years, I've honed my skills across multiple disciplines,
+                        allowing me to bridge the gap between design and functionality. I believe in clean code, intuitive interfaces, and scalable solutions.
+                    </p>
+                    <p>
+                        When I'm not coding or designing, you'll find me exploring emerging technologies, contributing to open-source projects, or mentoring aspiring developers.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card fade-in-element" data-tilt>
+                        <div class="stat-number counter" data-target="5">0</div>
+                        <div class="stat-suffix">+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card fade-in-element" data-tilt>
+                        <div class="stat-number counter" data-target="30">0</div>
+                        <div class="stat-suffix">+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card fade-in-element" data-tilt>
+                        <div class="stat-number">100</div>
+                        <div class="stat-suffix">%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-card fade-in-element" data-tilt>
+                        <div class="stat-number">UAE</div>
+                        <div class="stat-label">Based In</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Web Development Skills -->
+                <div class="skill-category fade-in-element" data-tilt>
+                    <h3 class="category-title">Web Development</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML & CSS</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">React</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & Programming -->
+                <div class="skill-category fade-in-element" data-tilt>
+                    <h3 class="category-title">Backend & Programming</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level">87%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 87%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Database Design</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">REST APIs</span>
+                                <span class="skill-level">92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Git & Version Control</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Skills -->
+                <div class="skill-category fade-in-element" data-tilt>
+                    <h3 class="category-title">Design & UX</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">UI/UX Design</span>
+                                <span class="skill-level">91%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 91%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Photoshop</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Illustrator</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Figma</span>
+                                <span class="skill-level">89%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 89%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IT & Administration -->
+                <div class="skill-category fade-in-element" data-tilt>
+                    <h3 class="category-title">IT & Administration</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">System Administration</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Network Management</span>
+                                <span class="skill-level">87%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 87%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Cloud Services</span>
+                                <span class="skill-level">84%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 84%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Security & Compliance</span>
+                                <span class="skill-level">86%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 86%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Smart Dashboard -->
+                <div class="project-card fade-in-element" data-tilt>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Smart Dashboard</h3>
+                    <p class="project-description">
+                        A comprehensive analytics dashboard with real-time data visualization, interactive charts, and customizable widgets. Built with React and Node.js.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Charts</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <a href="https://github.com/razinahmed/smart-dashboard" class="project-link" target="_blank" rel="noopener noreferrer">
+                        <span>View on GitHub</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- AI Image Classifier -->
+                <div class="project-card fade-in-element" data-tilt>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <path d="M21 15l-5-5L5 21"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="project-title">AI Image Classifier</h3>
+                    <p class="project-description">
+                        Deep learning model for image classification with a beautiful web interface. Supports multiple image formats and provides detailed classification results.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">Deep Learning</span>
+                    </div>
+                    <a href="https://github.com/razinahmed/ai-image-classifier" class="project-link" target="_blank" rel="noopener noreferrer">
+                        <span>View on GitHub</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- REST API Starter Kit -->
+                <div class="project-card fade-in-element" data-tilt>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
+                                <line x1="12" y1="12" x2="20" y2="7.5"></line>
+                                <line x1="12" y1="12" x2="12" y2="21"></line>
+                                <line x1="12" y1="12" x2="4" y2="7.5"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="project-title">REST API Starter Kit</h3>
+                    <p class="project-description">
+                        Production-ready Node.js REST API boilerplate with authentication, validation, error handling, and comprehensive documentation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">Backend</span>
+                    </div>
+                    <a href="https://github.com/razinahmed/rest-api-starter-kit" class="project-link" target="_blank" rel="noopener noreferrer">
+                        <span>View on GitHub</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content fade-in-element">
+                <p class="contact-subtitle">
+                    I'm always interested in hearing about new projects and opportunities.
+                    Feel free to reach out if you want to collaborate or just say hello!
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:razinahmedv@gmail.com" class="contact-card" data-tilt>
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Email</h3>
+                            <p>razinahmedv@gmail.com</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/razinahmed" class="contact-card" target="_blank" rel="noopener noreferrer" data-tilt>
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <h3>GitHub</h3>
+                            <p>github.com/razinahmed</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Abdul Rasak V. All rights reserved.</p>
+                <p>Designed & Built with <span class="heart">❤</span> using HTML, CSS & JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
