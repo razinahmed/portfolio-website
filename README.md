@@ -19,7 +19,7 @@
 ## 📸 Preview
 
 <div align="center">
-<img src="screenshots/portfolio-hero.svg" alt="Portfolio Website Preview" width="100%">
+<img src="screenshots/portfolio-hero.png" alt="Portfolio Website Preview" width="100%">
 </div>
 
 ---
