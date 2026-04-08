@@ -8,7 +8,7 @@
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Responsive](https://img.shields.io/badge/Responsive-Mobile%20Friendly-green?style=for-the-badge)](https://github.com/razinahmed/portfolio-website)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](LICENSE)
 
 [Live Demo](#-live-demo) • [Features](#-features) • [Quick Start](#-quick-start) • [Customization](#-customization-guide)
 
