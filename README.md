@@ -16,6 +16,14 @@
 
 ---
 
+## 📸 Preview
+
+<div align="center">
+<img src="screenshots/portfolio-hero.svg" alt="Portfolio Website Preview" width="100%">
+</div>
+
+---
+
 ## 🚀 Live Demo
 
 [View Live Portfolio](https://razinahmed.github.io/portfolio-website) — *See it in action!*
